@@ -10,35 +10,40 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Lütfen 1.notunuzu giriniz");
-            string not1 = Console.ReadLine();
-            Console.WriteLine("Lütfen 2.notunuzu giriniz");
-            string not2 = Console.ReadLine();
-            Console.WriteLine("Lütfen 3.notunuzu giriniz");
-            string not3 = Console.ReadLine();
+          int bakiye = 1000;
 
-            int not1Int = Convert.ToInt32(not1);
-            int not2Int = Convert.ToInt32(not2);
-            int not3Int = Convert.ToInt32(not3);
-            int ortalama = (not1Int + not2Int + not3Int) / 3;
-            
-            if (ortalama < 100 && ortalama > 80)
-            {
-                Console.WriteLine("A+");
-            }
-            else if (ortalama < 80 && ortalama > 60)
-            {
-                Console.WriteLine("A");
-            }
-            else if (ortalama < 60 && ortalama > 40)
-            {
-                Console.WriteLine("B+");
-            }
-            else
-            {
-                Console.WriteLine("F");
-            }
+            Console.WriteLine("Atm'ye hoşgeldiniz");
 
+            Console.WriteLine("Yapmak istediğiniz işlemi seçiniz..");
+            Console.WriteLine("1:Bakiye Görüntüle");
+            Console.WriteLine("2:Para çek");
+            Console.WriteLine("3:Para yatır");
+            Console.WriteLine("4:Çıkış yap");
+            string secim = Console.ReadLine();
+
+            switch(secim)
+            {
+                case "1":
+                    Console.WriteLine("Bakiyeniz: "+ bakiye);
+                    break;
+                case "2":
+                    Console.WriteLine("Çekmek istediğiniz tutarı giriniz: ");
+                    string tutar = Console.ReadLine();
+                    int tutarInt = Convert.ToInt32(tutar);
+
+                    Console.WriteLine("Para çekilmiştir.Yeni bakiyeniz: " + (bakiye - tutarInt));
+                    break;
+                case "3":
+                    Console.WriteLine("Yatırmak istediğiniz tutarı giriniz: ");
+                    string tutar2 = Console.ReadLine();
+                    int tutar2Int = Convert.ToInt32(tutar2);
+                    Console.WriteLine("Para yatırılmıştr.Yeni tutarınız: "+ (bakiye + tutar2Int));
+                    break;
+                case "4":
+                    Console.WriteLine("Çıkış yapılıyor..");
+                    break;
+
+            }
             Console.ReadLine();
             
             
